@@ -1,0 +1,21 @@
+{{#if message}}
+<div class="alert my-5 alert-success alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="container">
+    <div class="row">
+        <form class="form-group" action="/admin/empleados/mensaje/{{id}}/create" method="post">
+        <label for="mensaje">id:</label>
+        <input class="form-control" type="number" name= "id_empleado" value="{{id}}" max="{{id}}" min="{{id}}">
+        <label for="mensaje">Mensaje:</label>
+        <input class="form-control" type="text"  name= "mensaje" placeholder="escribe un mensaje para los empleados...">
+        <button class= "btn btn-primary mt-3" type="submit">enviar mensaje...</button>
+        
+        </form>
+    </div>
+</div>
+
+<a href="/admin/empleados" class="btn btn-success mt-5">volver a empleados</a>

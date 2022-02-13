@@ -1,0 +1,29 @@
+<div class="datos">
+  <h2>datos personales</h2>
+</div>
+<div class="container">
+  <div class="row">
+    {{#each datosPersonales}}
+        <h5>nombre de usuario: {{username}}.</h5>
+        <h5>fecha de union: {{ts_create}}</h5>
+
+  {{/each}}
+  </div>
+</div>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">mensajes para mi</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each misMensajes}}
+    <tr>
+      <td>{{mensaje}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+

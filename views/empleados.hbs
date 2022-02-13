@@ -1,0 +1,66 @@
+{{#if habilitado}}
+<a href="/perfil" class="btn btn-secondary mb-4 ml-0">mi perfil</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">usuario</th>
+      <th scope="col">habilitado</th>
+      <th scope="col">admin</th>
+      <th scope="col">eliminar</th> 
+      <th scope="col">modificar</th>
+      <th scope="col">mensaje individual</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+      {{#each empleados}}
+    <tr>
+    <td>{{id}}</td>
+    <td>{{username}}</td>
+    <td>{{habilitado}}</td>
+    <td>{{admin}}</td>
+    <td><a  class="btn btn-secondary" href="/admin/empleados/borrar/{{id}}"><i style="color:red;" class='bx bxs-trash-alt'></i></a></td>
+    <td><a class="btn btn-secondary" href="/admin/empleados/modify/{{id}}"><i  style="color:rgb(247, 247, 247);" class='bx bx-edit'></i></a></td>
+    <td><a class="btn btn-warning" href="/admin/empleados/mensaje/{{id}}">mensaje a este empleado</a></td>
+    
+    
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a  class="btn btn-success" href="/admin/empleados/mensaje">enviar mensaje a los empleados</a>
+<a  class="btn btn-success" href="/mensajes">ver mensajes enviados</a>
+<a  class="btn btn-success" href="/admin/empleados/disabled">ver empleados deshabilitado</a>
+{{else}}
+<h3>Empleados deshabilitados</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">usuario</th>
+      <th scope="col">habilitado</th>
+      <th scope="col">admin</th>
+      <th scope="col">habilitar</th>
+      <th scope="col">mensaje individual</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+      {{#each empleados}}
+    <tr>
+    <td>{{id}}</td>
+    <td>{{username}}</td>
+    <td>{{habilitado}}</td>
+    <td>{{admin}}</td>
+    <td><a  class="btn btn-link" href="/admin/empleados/habilitar/{{id}}"><i style="color: rgb(32, 192, 32);" class='bx bx-refresh'></i></a></td>
+    <td><a class="btn btn-warning" href="/admin/empleados/mensaje/{{id}}">mensaje a este empleado</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}

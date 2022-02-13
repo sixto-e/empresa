@@ -1,0 +1,26 @@
+{{#if message}}
+<div class="alert my-5 alert-success alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+<div class="container">
+
+    <div class="row p-4">
+        <form class="form-group" action="/admin/empleados/mensaje/create" method="post">
+        <label for="mensaje">Mensaje:</label> 
+        <input class="form-control mt-1" type="text"  name= "mensaje" placeholder="escribe un mensaje para los empleados...">
+       
+        <button  class="btn btn-primary mt-4" type="submit">enviar mensaje...</button>
+        
+        </form>
+    </div>
+</div>
+
+
+
+
+<a class="btn btn-success  mt-5"href="/mensajes">ver mensajes enviados</a>
+
+
+
